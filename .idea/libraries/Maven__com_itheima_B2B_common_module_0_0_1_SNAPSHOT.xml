@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.itheima.B2B:common-module:0.0.1-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../JavaEE/repository/com/itheima/B2B/common-module/0.0.1-SNAPSHOT/common-module-0.0.1-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../JavaEE/repository/com/itheima/B2B/common-module/0.0.1-SNAPSHOT/common-module-0.0.1-SNAPSHOT-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../JavaEE/repository/com/itheima/B2B/common-module/0.0.1-SNAPSHOT/common-module-0.0.1-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
