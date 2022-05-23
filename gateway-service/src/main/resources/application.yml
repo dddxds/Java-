@@ -16,6 +16,6 @@ zuul:
       serviceId: user-consumer
     api-b:
       path: /api-b/**
-      serviceId: b2b-goods-consumer
+      serviceId: b2b-goods-consumer1
       #add-host-header: true
 
