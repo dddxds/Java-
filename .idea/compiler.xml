@@ -6,6 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="common" />
+        <module name="common-module" />
+        <module name="user-consumer" />
+        <module name="gateway-service" />
+        <module name="goods-provider" />
+        <module name="user-provider" />
+        <module name="goods-consumer" />
+        <module name="eureka-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
