@@ -27,10 +27,15 @@ public class UserController {
      // 用户登录
     @GetMapping(value = "/login")
     public String login(String uname, String upassword, HttpServletRequest request) {
+        System.out.println("uname===="+uname);
+        System.out.println(userService.login(uname));
+
        if (userService.login(uname) != null) {
+           System.out.println("!=null");
             if (userService.login(uname).getUpassword().equals(upassword)){
                 HttpSession session = request.getSession(true);
                 session.setAttribute("user", userService.login(uname));  //将登陆者信息存入session
+                System.out.println("------------------------------------");
               return "redirect:http://localhost:8896/goods/getAll?uaccount="+userService.login(uname).getUaccount()+"&upasswoed="+userService.login(uname).getUpassword();
             }
         }

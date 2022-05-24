@@ -9,7 +9,11 @@
     </insert>
     <select id="login" resultType="com.itheima.b2b.commonmodule.model.User"
             parameterType="java.lang.String">
-        select * from user where uname=#{uname}
+        select * from user where uaccount=#{uname}
     </select>
+    <update id="upload">
+        update user set uaccount=#{uname},upassword=#{upassword},usex=#{usex} where uaccount = #{uaccount} and upassword=upassword
+    </update>
+
 
 </mapper>

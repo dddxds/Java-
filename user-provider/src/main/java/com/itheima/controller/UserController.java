@@ -22,6 +22,7 @@ public class UserController {
     }
     @RequestMapping(value = "/login",method = RequestMethod.GET)
     public User login(@RequestParam("uname") String uname){
+        System.out.println("提供者的控制层"+uname);
         return userDao.login(uname);
     }
     @RequestMapping(value = "/upload",method = RequestMethod.GET)
