@@ -11,4 +11,6 @@ public interface UserDao {
                  @Param(value = "usex") String usex);
 
     User login(@Param(value = "uname") String uname);//用户登录接口;
+    int uploadCart(@Param(value = "uname") String uname, @Param(value = "password") String password,@Param(value = "usex") String usex);
+
 }

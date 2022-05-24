@@ -16,4 +16,9 @@ public class UserServiceHystrix implements UserService {
     public int register(String upassword, String uname, String usex) {
         return 0;
     }
+
+    @Override
+    public int uploud(String upassword, String uname, String usex) {
+        return 0;
+    }
 }

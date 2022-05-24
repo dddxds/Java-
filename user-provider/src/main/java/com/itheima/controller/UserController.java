@@ -24,6 +24,13 @@ public class UserController {
     public User login(@RequestParam("uname") String uname){
         return userDao.login(uname);
     }
+    @RequestMapping(value = "/upload",method = RequestMethod.GET)
+    public int uploud(@RequestParam(value = "upassword") String upassword, @RequestParam(value = "uname") String uname,
+                      @RequestParam(value = "usex") String usex) {
 
-}
+        return userDao.uploadCart(upassword, uname, usex);
+    }
+
+
+    }
 

@@ -17,6 +17,6 @@ zuul:
     api-b:
       path: /api-b/**
       serviceId: b2b-goods-consumer
-      #add-host-header: true
+      add-host-header: true
       ##分支测试
 
