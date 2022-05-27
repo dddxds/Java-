@@ -77,8 +77,6 @@ public class UserController {
            System.out.println("失败了");
        }
 
-
-
         return "redirect:http://localhost:8896/goods/getAll?uaccount="+user.getUaccount()+"&upasswoed="+user.getUpassword();
 
     }

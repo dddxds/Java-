@@ -19,4 +19,6 @@ eureka:
     hostname: localhost
 mybatis:
   mapper-locations: classpath:/mapper/*
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 

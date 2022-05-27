@@ -19,7 +19,7 @@ public interface GoodsDao {
     @Insert("insert into goods set gname=#{gname}, gremain=#{gmain},gdetails=#{gdetails},gprice=#{gprice},types=#{types}")
     int insertGood(Goods goods);
     //修改商品信息
-    @Update("update goods set gname=#{gname}, gremain=#{gmain},gdetails=#{gdetails},gprice=#{gprice} where gid=#{gid}")
+    @Update("update goods set gname=#{gname}, gremain=#{gremain},gdetails=#{gdetails},gprice=#{gprice} ,gnumber=#{gnumber} where gid=#{gid}")
     int updateGood(Goods goods);
     //删除商品
     @Delete("delete from goods where gid=#{gid}")

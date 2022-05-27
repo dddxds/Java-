@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -13,6 +14,7 @@
         <module name="goods-provider" />
         <module name="user-provider" />
         <module name="goods-consumer" />
+        <module name="manage-service" />
         <module name="eureka-server" />
       </profile>
     </annotationProcessing>
@@ -23,6 +25,7 @@
       <module name="gateway-service" target="1.8" />
       <module name="goods-consumer" target="1.8" />
       <module name="goods-provider" target="1.8" />
+      <module name="manage-service" target="1.8" />
       <module name="user-consumer" target="1.8" />
       <module name="user-provider" target="1.8" />
       <module name="商城系统-课程设计" target="8" />
@@ -36,6 +39,7 @@
       <module name="gateway-service" options="-parameters" />
       <module name="goods-consumer" options="-parameters" />
       <module name="goods-provider" options="-parameters" />
+      <module name="manage-service" options="-parameters" />
       <module name="user-consumer" options="-parameters" />
       <module name="user-provider" options="-parameters" />
     </option>

@@ -8,8 +8,17 @@ package com.itheima.b2b.commonmodule.model;
  */
 
 public class Goods {
-    public int gid, gprice;
+    public int gid, gprice,gnumber;
     public String gname, gdetails;
+
+    public int getGnumber() {
+        return gnumber;
+    }
+
+    public void setGnumber(int gnumber) {
+        this.gnumber = gnumber;
+    }
+
     private  Integer types;
     private String gremain;
 
@@ -62,12 +71,12 @@ public class Goods {
         this.gdetails = gdetails;
     }
 
-
     @Override
     public String toString() {
         return "Goods{" +
                 "gid=" + gid +
                 ", gprice=" + gprice +
+                ", gnumber=" + gnumber +
                 ", gname='" + gname + '\'' +
                 ", gdetails='" + gdetails + '\'' +
                 ", types=" + types +
