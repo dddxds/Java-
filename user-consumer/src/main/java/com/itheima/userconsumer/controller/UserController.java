@@ -1,5 +1,6 @@
 package com.itheima.userconsumer.controller;
 
+import com.itheima.b2b.commonmodule.model.User;
 import com.itheima.userconsumer.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,6 +25,14 @@ public class UserController {
     public String toregister() {
         return "register";
     }
+    @GetMapping(value = "/toupload")
+    public String toupload(HttpSession session,String uaccount) {
+
+
+        session.setAttribute("user", userService.login(uaccount));
+
+        return "upload";
+    }
      // 用户登录
     @GetMapping(value = "/login")
     public String login(String uname, String upassword, HttpServletRequest request) {
@@ -33,8 +42,8 @@ public class UserController {
        if (userService.login(uname) != null) {
            System.out.println("!=null");
             if (userService.login(uname).getUpassword().equals(upassword)){
-                HttpSession session = request.getSession(true);
-                session.setAttribute("user", userService.login(uname));  //将登陆者信息存入session
+                // HttpSession session = request.getSession(true);
+                // session.setAttribute("user", userService.login(uname));  //将登陆者信息存入session
                 System.out.println("------------------------------------");
               return "redirect:http://localhost:8896/goods/getAll?uaccount="+userService.login(uname).getUaccount()+"&upasswoed="+userService.login(uname).getUpassword();
             }
@@ -54,9 +63,17 @@ public class UserController {
         return "register";
     }
     @GetMapping("/upload")
-    public String upload(HttpSession session){
+    public String upload(HttpSession session, User user){
+       int i= userService.uploud(user);
+       if (i==1){
+           System.out.println("更新成功");
+       }else{
+           System.out.println("失败了");
+       }
 
-        return "upload";
+
+
+        return "index";
 
     }
 }

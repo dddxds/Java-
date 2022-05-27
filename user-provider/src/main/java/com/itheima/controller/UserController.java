@@ -25,11 +25,10 @@ public class UserController {
         System.out.println("提供者的控制层"+uname);
         return userDao.login(uname);
     }
-    @RequestMapping(value = "/upload",method = RequestMethod.GET)
-    public int uploud(@RequestParam(value = "upassword") String upassword, @RequestParam(value = "uname") String uname,
-                      @RequestParam(value = "usex") String usex) {
+    @RequestMapping(value = "/upload",method = RequestMethod.PUT)
+    public int uploud(User user) {
 
-        return userDao.uploadCart(upassword, uname, usex);
+        return userDao.uploadCart(user);
     }
 
 

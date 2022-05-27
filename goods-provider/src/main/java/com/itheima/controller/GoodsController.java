@@ -27,4 +27,18 @@ public class GoodsController {
     public Goods getOnegid(@RequestParam(value = "gid")int gid){
         return goodsDao.getOnegid(gid);
     }
+    @RequestMapping(value = "/addgoods" ,method = RequestMethod.POST)
+    public int addgoods(@RequestParam("goods") Goods goods){
+        return goodsDao.insertGood(goods);
+    }
+    @RequestMapping(value = "/updategoods" ,method = RequestMethod.PUT)
+    public int updategoods(@RequestParam("goods") Goods goods){
+        return goodsDao.updateGood(goods);
+    }
+    @RequestMapping(value = "/deletegoods" ,method = RequestMethod.DELETE)
+    public int deletegoods(@RequestParam("gid") int gid){
+        return goodsDao.deleteGood(gid);
+    }
+
+
 }

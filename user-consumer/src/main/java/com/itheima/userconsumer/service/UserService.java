@@ -21,8 +21,7 @@ public interface UserService {
 
     @RequestMapping(value = "/register",method = RequestMethod.GET)
     public  int register(@RequestParam(value = "upassword")String upassword, @RequestParam(value = "uname")String uname, @RequestParam(value = "usex") String usex);
-    @RequestMapping(value = "/upload",method = RequestMethod.GET)
-    public int uploud(@RequestParam(value = "upassword") String upassword, @RequestParam(value = "uname") String uname,
-                      @RequestParam(value = "usex") String usex);
+    @RequestMapping(value = "/upload",method = RequestMethod.PUT)
+    public int uploud(User user);
 
 }

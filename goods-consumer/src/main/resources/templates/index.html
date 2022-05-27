@@ -19,6 +19,7 @@
                 <a href="">
                     欢迎您：<em th:text="${session.uaccount}"></em>
                 </a>
+                <a th:href=@{'http://localhost:8893/admin/toupload?uaccount='+${session.uaccount}}>信息修改</a>
                     <span>|</span>
                     <a href="/goods/cartAll">我的购物车</a>
                     <span>|</span>

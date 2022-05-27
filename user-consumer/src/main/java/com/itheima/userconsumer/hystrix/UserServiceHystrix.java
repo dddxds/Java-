@@ -18,7 +18,9 @@ public class UserServiceHystrix implements UserService {
     }
 
     @Override
-    public int uploud(String upassword, String uname, String usex) {
+    public int uploud(User user) {
         return 0;
     }
+
+
 }

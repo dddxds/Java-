@@ -40,5 +40,14 @@ public interface GoodsService {
     public List<Userorder> getAllorder(@RequestParam(value = "uid") int uid);
 
 
+
+    @RequestMapping(value = "/addgoods" ,method = RequestMethod.POST)
+    public int addgoods(@RequestParam("goods") Goods goods);
+    @RequestMapping(value = "/updategoods" ,method = RequestMethod.PUT)
+    public int updategoods(@RequestParam("goods") Goods goods);
+    @RequestMapping(value = "/deletegoods" ,method = RequestMethod.DELETE)
+    public int deletegoods(@RequestParam("gid") int gid);
+
+
 }
 

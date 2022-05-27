@@ -49,4 +49,19 @@ public class GoodsServiceHystrix implements GoodsService {
         return null;
     }
 
+    @Override
+    public int addgoods(Goods goods) {
+        return 0;
+    }
+
+    @Override
+    public int updategoods(Goods goods) {
+        return 0;
+    }
+
+    @Override
+    public int deletegoods(int gid) {
+        return 0;
+    }
+
 }
