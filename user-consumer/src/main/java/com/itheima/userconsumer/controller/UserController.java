@@ -5,6 +5,7 @@ import com.itheima.userconsumer.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
@@ -27,8 +28,7 @@ public class UserController {
     }
     @GetMapping(value = "/toupload")
     public String toupload(HttpSession session,String uaccount) {
-
-
+        System.out.println( userService.login(uaccount).toString());
         session.setAttribute("user", userService.login(uaccount));
 
         return "upload";
@@ -62,8 +62,14 @@ public class UserController {
         System.out.print("注册失败");
         return "register";
     }
-    @GetMapping("/upload")
-    public String upload(HttpSession session, User user){
+    @PostMapping("/upload")
+    public String upload(User user, String pwdconfirm,String uaccount){
+//        System.out.println(user.toString());
+//        System.out.println(uaccount);
+//
+//        System.out.println(pwdconfirm);
+
+       // uname upassword pwdconfirm usex
        int i= userService.uploud(user);
        if (i==1){
            System.out.println("更新成功");
@@ -73,7 +79,7 @@ public class UserController {
 
 
 
-        return "index";
+        return "redirect:http://localhost:8896/goods/getAll?uaccount="+user.getUaccount()+"&upasswoed="+user.getUpassword();
 
     }
 }

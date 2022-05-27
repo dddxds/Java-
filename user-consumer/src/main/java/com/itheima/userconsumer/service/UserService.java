@@ -4,6 +4,7 @@ import com.itheima.b2b.commonmodule.model.User;
 import com.itheima.userconsumer.hystrix.UserServiceHystrix;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,6 +23,6 @@ public interface UserService {
     @RequestMapping(value = "/register",method = RequestMethod.GET)
     public  int register(@RequestParam(value = "upassword")String upassword, @RequestParam(value = "uname")String uname, @RequestParam(value = "usex") String usex);
     @RequestMapping(value = "/upload",method = RequestMethod.PUT)
-    public int uploud(User user);
+    public int uploud(@RequestBody User user);
 
 }

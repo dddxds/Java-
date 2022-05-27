@@ -33,6 +33,16 @@ public class User {
         this.uname = uname;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "uaccount='" + uaccount + '\'' +
+                ", upassword='" + upassword + '\'' +
+                ", uname='" + uname + '\'' +
+                ", usex='" + usex + '\'' +
+                '}';
+    }
+
     public String getUsex() {
         return usex;
     }

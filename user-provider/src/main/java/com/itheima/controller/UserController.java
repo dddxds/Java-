@@ -6,10 +6,8 @@ package com.itheima.controller;
 import com.itheima.b2b.commonmodule.model.User;
 import com.itheima.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 @RestController
 public class UserController {
     @Autowired
@@ -26,9 +24,8 @@ public class UserController {
         return userDao.login(uname);
     }
     @RequestMapping(value = "/upload",method = RequestMethod.PUT)
-    public int uploud(User user) {
-
-        return userDao.uploadCart(user);
+    public int uploud(@RequestBody User user) {
+        return userDao.upload(user);
     }
 
 

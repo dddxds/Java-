@@ -13,6 +13,6 @@ public interface UserDao {
 
     User login(@Param(value = "uname") String uname);//用户登录接口;
 
-    int uploadCart(User user);
+    int upload(User user);
 
 }

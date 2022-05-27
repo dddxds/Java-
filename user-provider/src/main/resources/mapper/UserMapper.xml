@@ -12,7 +12,7 @@
         select * from user where uaccount=#{uname}
     </select>
     <update id="upload">
-        update user set uaccount=#{uname},upassword=#{upassword},usex=#{usex} where uaccount = #{uaccount} and upassword=upassword
+        update user set uname=#{uname},upassword=#{upassword},usex=#{usex} where uaccount = #{uaccount} and upassword=upassword
     </update>
 
 
