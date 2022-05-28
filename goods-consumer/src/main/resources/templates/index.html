@@ -20,12 +20,15 @@
                     欢迎您：<em th:text="${session.uaccount}"></em>
                 </a>
                 <a th:href="@{'http://localhost:8893/admin/toupload?uaccount='+${session.uaccount}}">信息修改</a>
+
                     <span>|</span>
                     <a href="/goods/cartAll">我的购物车</a>
                     <span>|</span>
                     <a href="/goods/getAllorder">我的订单</a>
                 <span>|</span>
                 <a href="http://localhost:8896/goods/quit">退出</a>
+                <span>|</span>
+                <a th:href="@{'http://localhost:8897/manage/getAllgoods'}">管理商品</a>
             </div>
             <div class="login_btn fl" th:if="${session.uaccount} eq null">
             <a href="http://localhost:8893/admin/tologin">

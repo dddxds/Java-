@@ -11,6 +11,10 @@ spring:
     maxActive: 100
   application:
     name: b2b-goods-provider
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
 eureka:
   client:
     service-url:

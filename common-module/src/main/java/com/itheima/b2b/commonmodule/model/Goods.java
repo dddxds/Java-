@@ -1,5 +1,7 @@
 package com.itheima.b2b.commonmodule.model;
 
+import java.util.List;
+
 /**
  * @Classname Goods
  * @Description TODO
@@ -11,31 +13,31 @@ public class Goods {
     public int gid, gprice,gnumber;
     public String gname, gdetails;
 
-    public int getGnumber() {
-        return gnumber;
-    }
-
-    public void setGnumber(int gnumber) {
-        this.gnumber = gnumber;
-    }
+    private List<Comments> comments;
 
     private  Integer types;
     private String gremain;
 
-    public String getGremain() {
-        return gremain;
+    @Override
+    public String toString() {
+        return "Goods{" +
+                "gid=" + gid +
+                ", gprice=" + gprice +
+                ", gnumber=" + gnumber +
+                ", gname='" + gname + '\'' +
+                ", gdetails='" + gdetails + '\'' +
+                ", comments=" + comments +
+                ", types=" + types +
+                ", gremain='" + gremain + '\'' +
+                '}';
     }
 
-    public void setGremain(String gremain) {
-        this.gremain = gremain;
+    public List<Comments> getComments() {
+        return comments;
     }
 
-    public Integer getTypes() {
-        return types;
-    }
-
-    public void setTypes(Integer types) {
-        this.types = types;
+    public void setComments(List<Comments> comments) {
+        this.comments = comments;
     }
 
     public int getGid() {
@@ -46,13 +48,20 @@ public class Goods {
         this.gid = gid;
     }
 
-
     public int getGprice() {
         return gprice;
     }
 
     public void setGprice(int gprice) {
         this.gprice = gprice;
+    }
+
+    public int getGnumber() {
+        return gnumber;
+    }
+
+    public void setGnumber(int gnumber) {
+        this.gnumber = gnumber;
     }
 
     public String getGname() {
@@ -71,16 +80,20 @@ public class Goods {
         this.gdetails = gdetails;
     }
 
-    @Override
-    public String toString() {
-        return "Goods{" +
-                "gid=" + gid +
-                ", gprice=" + gprice +
-                ", gnumber=" + gnumber +
-                ", gname='" + gname + '\'' +
-                ", gdetails='" + gdetails + '\'' +
-                ", types=" + types +
-                ", gremain='" + gremain + '\'' +
-                '}';
+    public Integer getTypes() {
+        return types;
     }
+
+    public void setTypes(Integer types) {
+        this.types = types;
+    }
+
+    public String getGremain() {
+        return gremain;
+    }
+
+    public void setGremain(String gremain) {
+        this.gremain = gremain;
+    }
+
 }

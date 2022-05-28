@@ -23,14 +23,18 @@ public class GoodsController {
     }
     @RequestMapping(value = "/getOnegid",method = RequestMethod.GET)
     public Goods getOnegid(@RequestParam(value = "gid")int gid){
-        return goodsDao.getOnegid(gid);
+        Goods goods ;
+        goods=goodsDao.getOnegid(gid);
+        goods.setComments(goodsDao.getoneComments(gid));
+        return goods;
     }
     @RequestMapping(value = "/addgoods" ,method = RequestMethod.POST)
-    public int addgoods(@RequestParam("goods") Goods goods){
+    public int addgoods(@RequestBody Goods goods){
         return goodsDao.insertGood(goods);
     }
     @RequestMapping(value = "/updategoods" ,method = RequestMethod.PUT)
     public int updategoods(@RequestBody Goods goods){
+
         return goodsDao.updateGood(goods);
     }
     @RequestMapping(value = "/deletegoods" ,method = RequestMethod.DELETE)
