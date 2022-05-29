@@ -8,6 +8,8 @@ import com.itheima.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class UserController {
     @Autowired
@@ -28,6 +30,23 @@ public class UserController {
         return userDao.upload(user);
     }
 
+    @RequestMapping(value = "/getAllUser",method = RequestMethod.GET)
+    public List<User> getAllUser(){
+        return userDao.getAllUser();
+
+    }
+    @RequestMapping(value = "/selectuserbyid",method = RequestMethod.GET)
+    public User SelectUserById (@RequestParam(value = "uaccount") String uaccount){
+        return userDao.SelectUserById(uaccount);
+    }
+    @RequestMapping(value = "/updateuser",method = RequestMethod.PUT)
+    public int updateUser(@RequestBody User user){
+        return userDao.updateUser(user);
+    }
+   @RequestMapping(value="/deleteusre",method = RequestMethod.DELETE)
+    public int deleteUser(@RequestParam(value = "uaccount") String uaccount){
+        return userDao.delete(uaccount);
+   }
 
     }
 

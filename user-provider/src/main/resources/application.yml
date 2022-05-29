@@ -13,6 +13,8 @@ spring:
     name: b2b-user-provider
 eureka:
   client:
+#    register-with-eureka: false
+#    fetch-registry: false
     service-url:
       #defaultZone: http://root:123456@localhost:8500/eureka/
       defaultZone: http://localhost:8500/eureka/      

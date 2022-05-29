@@ -7,14 +7,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="ordermanage-service" />
         <module name="common" />
-        <module name="goodsmanage-service" />
         <module name="common-module" />
         <module name="user-consumer" />
         <module name="gateway-service" />
         <module name="goods-provider" />
         <module name="user-provider" />
+        <module name="usermanage-service" />
         <module name="goods-consumer" />
+        <module name="manage-service" />
         <module name="eureka-server" />
       </profile>
     </annotationProcessing>
@@ -25,9 +27,11 @@
       <module name="gateway-service" target="1.8" />
       <module name="goods-consumer" target="1.8" />
       <module name="goods-provider" target="1.8" />
-      <module name="goodsmanage-service" target="1.8" />
+      <module name="manage-service" target="1.8" />
+      <module name="ordermanage-service" target="1.8" />
       <module name="user-consumer" target="1.8" />
       <module name="user-provider" target="1.8" />
+      <module name="usermanage-service" target="1.8" />
       <module name="商城系统-课程设计" target="8" />
     </bytecodeTargetLevel>
   </component>
@@ -39,9 +43,11 @@
       <module name="gateway-service" options="-parameters" />
       <module name="goods-consumer" options="-parameters" />
       <module name="goods-provider" options="-parameters" />
-      <module name="goodsmanage-service" options="-parameters" />
+      <module name="manage-service" options="-parameters" />
+      <module name="ordermanage-service" options="-parameters" />
       <module name="user-consumer" options="-parameters" />
       <module name="user-provider" options="-parameters" />
+      <module name="usermanage-service" options="-parameters" />
     </option>
   </component>
 </project>

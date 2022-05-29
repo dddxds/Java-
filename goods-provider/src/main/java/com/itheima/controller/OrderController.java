@@ -19,4 +19,11 @@ public class OrderController {
     public List<Userorder> getAllorder(@RequestParam(value = "uid")int uid){
         return orderDao.getAllorder(uid);
     }
+
+    @RequestMapping(value = "/deleteorder",method = RequestMethod.DELETE)
+    public int deleteorder(@RequestParam(value = "id")int id){return orderDao.deleteOrder(id);}
+    @RequestMapping(value = "/getAllOrder",method = RequestMethod.GET)
+    public List<Userorder> getAllorder(){
+        return orderDao.getAllOrder();
+    }
 }
