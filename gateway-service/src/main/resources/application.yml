@@ -12,11 +12,20 @@ zuul:
     connect-timeout-millis: 60000
   routes:
     api-a:
-      path: /api-a/**
+      path: /user-consumer/**
       serviceId: user-consumer
     api-b:
-      path: /api-b/**
+      path: /b2b-goods-consumer/**
       serviceId: b2b-goods-consumer
-      add-host-header: true
+      add-host-header: true  #表示API网关在进行请求路由转发前为请求设置Host头信息
       ##分支测试
+    api-c:
+      path: /b2b-goodsmanage/**
+      serviceId: b2b-goodsmanage
+    api-d:
+      path: /b2b-usermanage/**
+      serviceId: b2b-usermanage
+    api-e:
+      path: /b2b-ordermanage/**
+      serviceId: b2b-ordermanage
 
