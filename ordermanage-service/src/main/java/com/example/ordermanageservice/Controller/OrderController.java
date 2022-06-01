@@ -14,7 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @File : OrderController.java
  * @Software : IntelliJ IDEA
  */
-@Controller("/ordermanage")
+@Controller
+@RequestMapping("/ordermanage")
 public class OrderController {
     @Autowired
     OrderService orderService;

@@ -22,5 +22,10 @@ public class UserServiceHystrix implements UserService {
         return 0;
     }
 
+    @Override
+    public User SelectUserById(String uaccount) {
+        return null;
+    }
+
 
 }

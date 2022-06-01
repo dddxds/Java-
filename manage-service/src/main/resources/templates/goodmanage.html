@@ -146,25 +146,10 @@
     <div class="header">
         <div class="welcome fl">欢迎来到美多商城!</div>
         <div class="fr">
-            <div class="login_btn fl" th:if="${session.uaccount} ne null">
-                <a href="">
-                    欢迎您：<em th:text="${session.uaccount}"></em>
-                </a>
-                <span>|</span>
-                <a href="http://localhost:8894/goods/quit">退出</a>
-            </div>
-            <div class="login_btn fl" th:if="${session.uaccount} eq null">
-                <a href="http://localhost:8893/admin/tologin">
-                    请您登陆
-                </a>
-            </div>
-            <div class="user_link fl">
-                <span>|</span>
-                <a href="/goods/cartAll">我的购物车</a>
-                <span>|</span>
-                <a href="/goods/getAllorder">我的订单</a>
-
-            </div>
+            <span>|</span>
+            <a href="#">管理商品</a> <span>|</span>
+            <a th:href="@{'http://localhost:8898/usermanage/getAllusers'}">管理用户</a> <span>|</span>
+            <a th:href="@{'http://localhost:8899/ordermanage/getAllOrder'}">管理订单</a>
         </div>
     </div>
 </div>

@@ -5,11 +5,13 @@ package com.itheima.controller;
  */
 
 import com.itheima.b2b.commonmodule.model.Cart;
+import com.itheima.b2b.commonmodule.model.Comments;
 import com.itheima.b2b.commonmodule.model.Goods;
 import com.itheima.service.GoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
@@ -38,7 +40,8 @@ public class GoodsController {
         List<Goods> goods2 = new ArrayList<>();
         List<Goods> goods3 = new ArrayList<>();
         List<Goods> goods4 = new ArrayList<>();
-        List<Goods> oldgoods = goodsService.getAllgoods();
+        List<Goods> oldgoods = null;
+                oldgoods=goodsService.getAllgoods();
         for (Goods newgoods : oldgoods) {
             System.out.print(newgoods.getTypes());
             if (newgoods.getTypes().equals(1)) {
@@ -157,6 +160,25 @@ public class GoodsController {
             return "redirect:http://localhost:8893/admin/tologin";
         }
         return "order";
+    }
+    //
+    @GetMapping(value = "/tocomments")
+    public String tocomments(HttpServletRequest request, int gid) {
+        System.out.println(goodsService.getoneComments(gid));
+        request.setAttribute("comments", goodsService.getoneComments(gid));
+        return "comments";
+    }
+    @PostMapping("/addcomment")
+    public String addcomment(Comments comments){
+        System.out.println(comments.toString());
+        goodsService.insertComments(comments);
+        return "redirect:tocomments?gid="+comments.gid;
+    }
+
+    @GetMapping("/deletecomment")
+    public String deleteComment(int cid){
+        goodsService.deleteComments(cid);
+        return "redirect:tocomments?gid=9";
     }
 
 

@@ -4,6 +4,7 @@ package com.itheima.service;
  * Created by itcast on 2019/10/31.
  */
 import com.itheima.b2b.commonmodule.model.Cart;
+import com.itheima.b2b.commonmodule.model.Comments;
 import com.itheima.b2b.commonmodule.model.Goods;
 import com.itheima.b2b.commonmodule.model.Userorder;
 import com.itheima.hystrix.GoodsServiceHystrix;
@@ -47,6 +48,17 @@ public interface GoodsService {
     public int updategoods(@RequestParam("goods") Goods goods);
     @RequestMapping(value = "/deletegoods" ,method = RequestMethod.DELETE)
     public int deletegoods(@RequestParam("gid") int gid);
+
+
+    //添加评论
+    @RequestMapping(value = "insertcomment",method = RequestMethod.POST)
+    int insertComments(@RequestBody Comments comments);
+    //查询评论
+    @RequestMapping(value = "getComments",method = RequestMethod.GET)
+    List<Comments> getoneComments(@RequestParam("gid") int gid);
+    //删除评论
+    @RequestMapping(value = "deleteComments",method = RequestMethod.DELETE)
+    int deleteComments(@RequestParam("cid") int cid);
 
 
 }

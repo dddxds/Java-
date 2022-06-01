@@ -3,6 +3,7 @@ package com.itheima.controller;
 /**
  * Created by itcast on 2019/10/31.
  */
+import com.itheima.b2b.commonmodule.model.Comments;
 import com.itheima.b2b.commonmodule.model.Goods;
 import com.itheima.dao.GoodsDao;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +41,22 @@ public class GoodsController {
     @RequestMapping(value = "/deletegoods" ,method = RequestMethod.DELETE)
     public int deletegoods(@RequestParam("gid") int gid){
         return goodsDao.deleteGood(gid);
+    }
+    //添加评论
+    @RequestMapping(value = "insertcomment",method = RequestMethod.POST)
+    int insertComments(@RequestBody Comments comments){
+        return goodsDao.insertComments(comments);
+    }
+    //查询评论
+    @RequestMapping(value = "getComments",method = RequestMethod.GET)
+    List<Comments> getoneComments(@RequestParam("gid") int gid){
+        System.out.println(goodsDao.getoneComments(gid));
+        return goodsDao.getoneComments(gid);
+    }
+    //删除评论
+    @RequestMapping(value = "deleteComments",method = RequestMethod.DELETE)
+    int deleteComments(@RequestParam("cid") int cid){
+        return goodsDao.deleteComments(cid);
     }
 
 

@@ -20,7 +20,7 @@ public interface UserDao {
     @Select("select*from user")
     List<User> getAllUser();
     //根据Id查询
-    @Select("select from user where uaccount=#{uaccount}")
+    @Select("select*from user where uaccount=#{uaccount}")
     User SelectUserById (String uaccount);
     //修改
     @Update("update user set uname=#{uname},upassword=#{upassword},usex=#{usex} where uaccount=#{uaccount}")

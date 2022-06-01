@@ -4,6 +4,7 @@ package com.itheima.hystrix;
  * Created by itcast on 2019/10/31.
  */
 import com.itheima.b2b.commonmodule.model.Cart;
+import com.itheima.b2b.commonmodule.model.Comments;
 import com.itheima.b2b.commonmodule.model.Goods;
 import com.itheima.b2b.commonmodule.model.Userorder;
 import com.itheima.service.GoodsService;
@@ -61,6 +62,21 @@ public class GoodsServiceHystrix implements GoodsService {
 
     @Override
     public int deletegoods(int gid) {
+        return 0;
+    }
+
+    @Override
+    public int insertComments(Comments comments) {
+        return 0;
+    }
+
+    @Override
+    public List<Comments> getoneComments(int gid) {
+        return null;
+    }
+
+    @Override
+    public int deleteComments(int cid) {
         return 0;
     }
 

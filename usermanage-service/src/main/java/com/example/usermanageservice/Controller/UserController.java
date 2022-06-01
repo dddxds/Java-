@@ -33,9 +33,9 @@ public class UserController {
 
     }
     @RequestMapping(value = "/deleteuser")
-    public String deleteusers(String ACCOUNT){
-        System.out.println("account="+ACCOUNT);
-        int i= userService.deleteUser(ACCOUNT);
+    public String deleteusers(String uaccount){
+        System.out.println("account="+uaccount);
+        int i= userService.deleteUser(uaccount);
         if (i==1){
             System.out.println("删除成功");
         }else{

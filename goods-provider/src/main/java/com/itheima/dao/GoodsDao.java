@@ -28,7 +28,7 @@ public interface GoodsDao {
 
     //添加评论
     @Insert("insert into comments set uname=#{uname},gid=#{gid},comment=#{comment}")
-    int insertComments(int gid,int uname,int comment);
+    int insertComments(Comments comments);
     //查询评论
     @Select("select* from comments where gid=#{gid}")
     List<Comments> getoneComments(int gid);
