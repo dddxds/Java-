@@ -26,7 +26,7 @@ public interface UserDao {
     @Update("update user set uname=#{uname},upassword=#{upassword},usex=#{usex} where uaccount=#{uaccount}")
     int updateUser(User user);
     //删除
-    @Delete("delete form user where uaccount=#{uaccount}")
+    @Delete("delete from user where uaccount=#{uaccount}")
     int delete(String uaccount);
 
 }

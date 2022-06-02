@@ -179,7 +179,7 @@
             </thead>
             <tbody>
             <tr class="trclass" th:each="newgoods:${allusers}">
-                <form method="post" action="/usermanage/updategood">
+                <form method="post" action="/usermanage/updateuser">
                 <td class="tdone"style="width: 316px">
                     <input  type="text" name="uaccount" th:value="${newgoods.uaccount}" >
                 </td>
